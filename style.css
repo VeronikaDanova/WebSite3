@@ -1,0 +1,287 @@
+
+*{
+--cadet-blue: #a6bfcc;
+--outer-space: #314128;
+font-family: 'Roboto', sans-serif;
+font-family: 'Space Grotesk', sans-serif;
+box-sizing: border-box;
+}
+
+.mode {
+    font-size: 30px;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+body {
+    width: 100%;
+    background-image: linear-gradient(var(--outer-space), var(--cadet-blue) 40%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    margin: 2rem;
+    
+}
+
+.navigation {
+    color: white;
+    position: sticky;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    max-width: 60%;
+    margin: auto;
+    top: 0;
+}
+
+.nav-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-item:after {
+    content: "";
+    position: absolute;
+    background-color: var(--cadet-blue);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.nav-item:hover:after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.nav-close {
+    display: none;
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        row-gap: 2.5rem;
+        padding: 1rem;
+    }
+    
+    .nav-wrapper {
+        background-color: hsla(0, 0%, 0%, .2);
+        backdrop-filter: blur(24);
+        position: fixed;
+        left: -100%;
+        width: 100%;
+    }
+
+    .nav-wrapper.active {
+        left: 0;
+        padding-top: 1rem;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle.active {
+        opacity: 0;
+    }
+
+    .nav-close.active {
+        display: block;
+    }
+
+    .nav-wrapper.active + .section1 {
+        margin-top: 7rem; 
+    }
+
+ }
+
+
+
+.section1 {
+   max-width: 90%;
+   margin: auto;
+   margin-top: 4rem;
+}
+
+.products {
+    display: flex;
+    gap: 20px; 
+    
+}
+
+.product-c {
+    flex: 1;
+    flex-basis: calc(33% - 20px);
+    color: white;
+    position: relative;
+    
+}
+
+@media (max-width: 768px) {
+    .products {
+        flex-direction: column;
+    }
+ }
+
+h2 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 5rem;
+    text-decoration: transparent;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.product-img {
+    height: 300px;  
+    cursor: pointer; 
+}
+
+
+
+.product-c img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+#top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 32px;
+    text-decoration: none;
+    transition: all .5s;
+    display: none;
+    cursor: pointer;
+    align-items: center;
+
+}
+
+#top i {
+    position: absolute;
+    bottom: -7px;
+    right: -7px;
+  }
+
+.section2 {
+    align-items: center;
+    margin: auto;
+    max-width: 20%;
+    text-align: center;
+    padding: 5rem;
+}
+
+@media (max-width: 768px) {
+    .section2 {
+        max-width: 70%;
+        margin-top: 13rem;
+    }
+ }
+
+.fa-user-large {
+    font-size: 32px;
+    color: var(--outer-space);
+    margin-bottom: 1rem;
+}
+
+
+.form {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type="password"] {
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid rgb(35, 33, 33);
+    background: transparent;
+    border-radius: 5px;
+}
+
+form input[type="email"] {
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid rgb(35, 33, 33);
+    background: transparent;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #5555551a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    color: var(--outer-space);
+    height: 9.5vh;
+    background-color: rgba(255, 255, 255, 0.548);
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-items {
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+footer i {
+    padding: 0.5rem;
+}
